@@ -1,0 +1,161 @@
+@import url("https://fonts.google.com/specimen/Noto+Sans?preview.size=27&stroke=Sans+Serif");
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+section{ 
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image:linear-gradient( to bottom right ,rgb(11, 11, 24),rgb(23, 10, 10));
+    /* making section a flex container */
+    display: flex; 
+    /* for aligning flex items in center */
+    align-items: center;
+    justify-content: center;
+    color:white;
+    perspective:1000px ;
+
+} 
+
+ /* pseudo elements  */
+
+section::before{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 285px;
+    background: linear-gradient(90deg,rgb(88, 20, 88),rgb(248, 245, 245));
+    border-radius: 160px;
+    transform: translate(-202px,-106px);
+
+}
+section::after{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 285px;
+    background: linear-gradient(90deg,rgb(88, 20, 88),rgb(248, 245, 245));
+    border-radius: 160px;
+    transform: translate(209px, 89px);
+
+}
+
+.container{
+    height:303px ;
+    width: 494px;
+    position: relative;
+    z-index: 100;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.container:hover{
+transform:rotatey(180deg) ;
+}
+
+.container .card{
+    position: absolute;
+    height:100% ;
+    width: 100%;
+    background-color: rgb(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 33px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    backface-visibility: hidden;
+    
+}
+
+.front-face header,
+.front-face .logo{
+    display: flex;
+    align-items: center;
+}
+
+.front-face header{
+    justify-content: space-between;
+}
+
+.front-face .logo img{
+    width: 45px;
+    margin-right: 10px;
+} 
+
+h5{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.front-face .chip{
+    width: 86px;
+    height:60px;
+    position: relative;
+    
+}
+
+.front-face .card-details{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 60px;
+} 
+
+h6{
+    font-size:15px ;
+}
+
+h5.num{
+    letter-spacing: 3px;
+}
+
+h5.name{
+    margin-top: 20px;
+}
+
+.card.back-face{
+  border: none;
+  transform: rotatey(180deg);
+}
+.card.back-face h6{
+    font-size: 6px;
+    margin-top: -9px;
+}
+.card.back-face .strip{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: black;
+}
+
+.card.back-face .signature{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 80px;
+    height: 40px;
+    width: 85%;
+    border-radius: 6px;
+    background: repeating-linear-gradient(#fff,#fff 3px, #efefef 0px,#efefef 9px);
+}
+.signature i{
+    color: black;
+    font-size: 10px;
+    padding: 4px 6px;
+    border-radius:6px ;
+    background-color: #fff;
+    margin-right: -25px;
+    z-index: -1;
+}
+.card.back-face .text{
+    font-size: 16px;
+    margin-top: 33px;
+    margin-left: 9px;
+}
